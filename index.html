@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إهداء خاص للمهندسة روضة | سلامتك</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ربط ملف الـ CSS بالاسم الجديد -->
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="style.css">
+</head>// :root {
+    --bg-color: #0b0f19;
+    --card-bg: rgba(17, 24, 39, 0.75);
+    --primary: #6366f1;
+    --accent: #ec4899;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+    position: relative;
+}
+
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+    border: 1px solid var(--border-color);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: #818cf8;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-section h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #818cf8, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+.glass-card.featured {
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+    border: 1px dashed var(--accent);
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    color: #818cf8;
+    margin-bottom: 15px;
+}
+
+.glass-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.glass-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.card-hint {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Counter Box */
+.counter-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 35px 20px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(16px);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.heart-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.counter-box h3 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.counter-box p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.btn-bless {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+}
+
+.btn-bless:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px -5px rgba(99, 102, 241, 0.6);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #111827;
+    border: 1px solid var(--border-color);
+    padding: 35px 25px;
+    border-radius: 20px;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.modal-icon {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.modal-content h2 {
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+}
+
+.modal-content p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.btn-modal-ok {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-modal-ok:hover {
+    background: #4f46e5;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}خلفية الجسيمات المتحركة الهادئة
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+
+let particlesArray = [];
+const numberOfParticles = 30;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 0.6 - 0.3;
+        this.speedY = Math.random() * 0.6 - 0.3;
+    }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.x < 0) this.x = canvas.width;
+        if (this.y > canvas.height) this.y = 0;
+        if (this.y < 0) this.y = canvas.height;
+    }
+    draw() {
+        ctx.fillStyle = 'rgba(99, 102, 241, 0.35)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+function initParticles() {
+    particlesArray = [];
+    for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+    }
+}
+initParticles();
+
+function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+// عداد الدعوات
+const blessBtn = document.getElementById('blessBtn');
+const counterValue = document.getElementById('counterValue');
+let count = 1425;
+
+blessBtn.addEventListener('click', () => {
+    count++;
+    counterValue.textContent = count.toLocaleString();
+    blessBtn.innerHTML = '<i class="fa-solid fa-check"></i> تم إرسال دعوتك بسلام ❤️';
+    blessBtn.style.background = '#10b981';
+    setTimeout(() => {
+        blessBtn.innerHTML = '<i class="fa-solid fa-plus"></i> أرسل دعوة جديدة بالشفاء';
+        blessBtn.style.background = '';
+    }, 2000);
+});
+
+// النافذة المنبثقة للرسالة
+const surpriseModal = document.getElementById('surpriseModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const modalOkBtn = document.getElementById('modalOkBtn');
+
+function openModal() {
+    surpriseModal.classList.add('active');
+}
+
+closeModalBtn.addEventListener('click', () => {
+    surpriseModal.classList.remove('active');
+});
+
+modalOkBtn.addEventListener('click', () => {
+    surpriseModal.classList.remove('active');
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === surpriseModal) {
+        surpriseModal.classList.remove('active');
+    }
+});
+<body>
+
+    <canvas id="bgCanvas"></canvas>
+
+    <div class="container">
+        <!-- قسم الترحيب -->
+        <header class="hero-section">
+            <div class="hero-badge">
+                <i class="fa-solid fa-heart-pulse"></i> أمنيات صادقة بالشفاء العاجل
+            </div>
+            <h1>إلى أروع مهندسة وأعظم معلمة..<br><span class="highlight">المهندسة روضة</span> 💻✨</h1>
+            <p class="hero-subtitle">مكانتكِ في قلوبنا كبيرة جداً، ووجودكِ هو النور الذي يُلهمنا في كل خطوة. ندعو الله بكل صدق أن يمنّ عليكِ بالشفاء التام والعودة السريعة.</p>
+        </header>
+
+        <!-- كروت الإلهام -->
+        <section class="cards-grid">
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>بصمة لا تُنسى</h3>
+                <p>طريقتكِ الراقيّة وصبركِ معنا في تعليم البرمجة صنع فينا حباً كبيراً لهذا المجال ولشخصكِ الكريم.</p>
+            </div>
+
+            <div class="glass-card featured" onclick="openModal()">
+                <div class="card-icon"><i class="fa-solid fa-gift"></i></div>
+                <h3>رسالة تقدير خاصة 🎁</h3>
+                <p>اضغط هنا لفتح رسالة محملة بكل مشاعر الشكر والدعوات الخالصة من القلب.</p>
+                <span class="card-hint">انقر للاكتشاف</span>
+            </div>
+
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                <h3>دعواتنا لا تتوقف</h3>
+                <p>في كل وقت، ندعو الله أن يعيد إلينا ضحكتكِ وعافيتكِ لتمسحي كل تعب، وتعودي لقاعات الدرس أقوى من قبل.</p>
+            </div>
+        </section>
+
+        <!-- عداد الدعوات -->
+        <section class="counter-box">
+            <i class="fa-solid fa-heart heart-icon"></i>
+            <h3 id="counterValue">1,425</h3>
+            <p>دعوة صادقة بالشفاء أُرسلت لكِ من أعماق قلوبنا اليوم</p>
+            <button class="btn-bless" id="blessBtn"><i class="fa-solid fa-plus"></i> أرسل دعوة جديدة بالشفاء</button>
+        </section>
+    </div>
+
+    <!-- نافذة الرسالة الخاصة -->
+    <div class="modal-overlay" id="surpriseModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModalBtn">&times;</button>
+            <div class="modal-icon">🌟</div>
+            <h2>إلى أستاذتنا الفاضلة روضة</h2>
+            <p>نعلم أن الوعكة الصحية ثقيلة، لكننا نؤمن بقوتكِ وعزيمتكِ. لقد علمتِنا كيف نواجه المشاكل والأخطاء في الأكواد ونصلحها بصبر، ونحن اليوم نثق تماماً أنكِ ستتخطين هذا التعب وتعودين لنا بألف سلامة.<br><br><strong>ننتظر عودتكِ بفارغ الصبر يا مهندسة! ❤️</strong></p>
+            <button class="btn-modal-ok" id="modalOkBtn">مع خالص الحب والدعوات</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>صُمم هذا الموقع بكل محبة وتقدير للمهندسة روضة 🚀✨</p>
+    </footer>
+
+    <!-- ربط ملف الـ JavaScript بالاسم الجديد -->
+    <script src="A.js"></script>
+</body>
+</html>
