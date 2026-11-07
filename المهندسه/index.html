@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إهداء خاص للمهندسة روضة | سلامتك</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ربط ملف الـ CSS بالاسم الجديد -->
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="bgCanvas"></canvas>
+
+    <div class="container">
+        <!-- قسم الترحيب -->
+        <header class="hero-section">
+            <div class="hero-badge">
+                <i class="fa-solid fa-heart-pulse"></i> أمنيات صادقة بالشفاء العاجل
+            </div>
+            <h1>إلى أروع مهندسة وأعظم معلمة..<br><span class="highlight">المهندسة روضة</span> 💻✨</h1>
+            <p class="hero-subtitle">مكانتكِ في قلوبنا كبيرة جداً، ووجودكِ هو النور الذي يُلهمنا في كل خطوة. ندعو الله بكل صدق أن يمنّ عليكِ بالشفاء التام والعودة السريعة.</p>
+        </header>
+
+        <!-- كروت الإلهام -->
+        <section class="cards-grid">
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>بصمة لا تُنسى</h3>
+                <p>طريقتكِ الراقيّة وصبركِ معنا في تعليم البرمجة صنع فينا حباً كبيراً لهذا المجال ولشخصكِ الكريم.</p>
+            </div>
+
+            <div class="glass-card featured" onclick="openModal()">
+                <div class="card-icon"><i class="fa-solid fa-gift"></i></div>
+                <h3>رسالة تقدير خاصة 🎁</h3>
+                <p>اضغط هنا لفتح رسالة محملة بكل مشاعر الشكر والدعوات الخالصة من القلب.</p>
+                <span class="card-hint">انقر للاكتشاف</span>
+            </div>
+
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                <h3>دعواتنا لا تتوقف</h3>
+                <p>في كل وقت، ندعو الله أن يعيد إلينا ضحكتكِ وعافيتكِ لتمسحي كل تعب، وتعودي لقاعات الدرس أقوى من قبل.</p>
+            </div>
+        </section>
+
+        <!-- عداد الدعوات -->
+        <section class="counter-box">
+            <i class="fa-solid fa-heart heart-icon"></i>
+            <h3 id="counterValue">1,425</h3>
+            <p>دعوة صادقة بالشفاء أُرسلت لكِ من أعماق قلوبنا اليوم</p>
+            <button class="btn-bless" id="blessBtn"><i class="fa-solid fa-plus"></i> أرسل دعوة جديدة بالشفاء</button>
+        </section>
+    </div>
+
+    <!-- نافذة الرسالة الخاصة -->
+    <div class="modal-overlay" id="surpriseModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModalBtn">&times;</button>
+            <div class="modal-icon">🌟</div>
+            <h2>إلى أستاذتنا الفاضلة روضة</h2>
+            <p>نعلم أن الوعكة الصحية ثقيلة، لكننا نؤمن بقوتكِ وعزيمتكِ. لقد علمتِنا كيف نواجه المشاكل والأخطاء في الأكواد ونصلحها بصبر، ونحن اليوم نثق تماماً أنكِ ستتخطين هذا التعب وتعودين لنا بألف سلامة.<br><br><strong>ننتظر عودتكِ بفارغ الصبر يا مهندسة! ❤️</strong></p>
+            <button class="btn-modal-ok" id="modalOkBtn">مع خالص الحب والدعوات</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>صُمم هذا الموقع بكل محبة وتقدير للمهندسة روضة 🚀✨</p>
+    </footer>
+
+    <!-- ربط ملف الـ JavaScript بالاسم الجديد -->
+    <script src="A.js"></script>
+</body>
+</html>
